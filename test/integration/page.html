@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Page</title>
+
+  <script src="../../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+  <script src="../../bower_components/web-component-tester/browser.js"></script>
+
+  <style>
+    #page {
+      width: 200px;
+      height: 200px;
+      background: gray;
+      overflow: hidden;
+    }
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+    }
+  </style>
+
+</head>
+<body>
+
+<div id="page"></div>
+
+<script src="dist/page.js"></script>
+
+<script>
+
+  suite("Page", function() {
+
+    test("should pause before scrolling", function(done) {
+      assert.equal(document.querySelector(".content").style.transform, "", "not scrolling");
+
+      setTimeout(function() {
+        assert.match(document.querySelector(".content").style.transform, /^translate3d/, "scrolling");
+        done();
+      }, 2000);
+    });
+
+    test("should scroll height of container before pausing", function(done) {
+      var pageHeight = document.getElementById("page").clientHeight,
+        expected = "matrix(1, 0, 0, 1, 0, -" + pageHeight + ")";
+
+      setTimeout(function() {
+        assert.equal(document.querySelector(".content").style.transform, expected, "transform");
+
+        setTimeout(function() {
+          assert.equal(document.querySelector(".content").style.transform, expected, "paused");
+          done();
+        }, 1000);
+      }, 4000);
+    });
+
+    test("should let parent know when finished scrolling", function(done) {
+      var responseHandler = function() {
+        assert.isTrue(true);
+        window.removeEventListener("handleComplete", responseHandler);
+        done();
+      };
+
+      window.addEventListener("handleComplete", responseHandler);
+    });
+
+    test("should reset timeline when finished scrolling", function() {
+      assert.equal(document.querySelector(".content").style.transform, "matrix(1, 0, 0, 1, 0, 0)");
+    });
+
+  });
+
+</script>
+
+</body>
+</html>
