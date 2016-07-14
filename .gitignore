@@ -1,4 +1,4 @@
-dist/
+test/integration/dist/
 bower_components/
 node_modules/
 reports/
