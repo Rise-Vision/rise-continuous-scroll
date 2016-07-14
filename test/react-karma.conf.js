@@ -1,5 +1,5 @@
 var path = require("path");
-var webpackConfig = require("../webpack.config.js");
+var webpackConfig = require("../webpack.test.config.js");
 webpackConfig.devtool = "inline-source-map";
 
 module.exports = function(config) {
