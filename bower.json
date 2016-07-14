@@ -1,0 +1,20 @@
+{
+  "name": "rise-continuous-scroll",
+  "description": "React continuous scroll component",
+  "main": "dist/continuous-scroll.js",
+  "authors": [
+    "Rise Vision"
+  ],
+  "license": "GPL-3.0",
+  "keywords": [
+    "react-component",
+    "continuous",
+    "scroll"
+  ],
+  "homepage": "https://github.com/Rise-Vision/rise-continuous-scroll",
+  "private": true,
+  "devDependencies": {
+    "web-component-tester": "^4.3.1",
+    "webcomponentsjs": "^0.7.22"
+  }
+}
