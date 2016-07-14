@@ -20,3 +20,4 @@ deployment:
     branch: master
     commands:
       - NODE_ENV=prod npm run build
+      - npm publish
