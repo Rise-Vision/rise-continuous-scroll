@@ -1,6 +1,6 @@
 {
   "name": "rise-continuous-scroll",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "React continuous scroll component",
   "keywords": "react-component, continuous scroll",
   "main": "dist/continuous-scroll.js",
@@ -39,9 +39,9 @@
     "gulp": "^3.9.0",
     "gulp-bump": "~0.1.8",
     "json-loader": "^0.5.4",
-    "react": "^15.2.1",
-    "react-addons-test-utils": "^15.2.1",
-    "react-dom": "^15.2.1",
+    "react": "^0.14.8",
+    "react-addons-test-utils": "^0.14.8",
+    "react-dom": "^0.14.8",
     "rimraf": "^2.5.3",
     "run-sequence": "^0.3.2",
     "sinon-chai": "^2.8.0",
@@ -52,6 +52,6 @@
     "widget-tester": "git://github.com/Rise-Vision/widget-tester.git#1.6.7"
   },
   "peerDependencies": {
-    "react": "^15.2.1"
+    "react": "^0.14.8"
   }
 }

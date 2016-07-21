@@ -1,6 +1,6 @@
 {
   "name": "rise-continuous-scroll",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "React continuous scroll component",
   "main": "dist/continuous-scroll.js",
   "authors": [
